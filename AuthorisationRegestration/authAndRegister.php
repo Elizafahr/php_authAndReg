@@ -12,7 +12,7 @@ if (!empty($_POST['login']) and !empty($_POST['password'])) {
     $login = $_POST['login'];
     $name = $_POST['name'];
     $password = $_POST['password'];
-    $query = "INSERT INTO users SET login='$login', password='$password', name='$name'";
+    $query = "INSERT INTO User SET login='$login', password='$password', name='$name'";
     mysqli_query($link, $query);
     $_SESSION['auth'] = true; // пометка об авторизации
     echo "Регистрация и авторизация произошла успешо";

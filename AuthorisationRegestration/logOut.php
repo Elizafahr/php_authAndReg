@@ -1,5 +1,5 @@
 <form action="" method="POST">
-    <h2>Авторизация</h2>
+    <h2>logout</h2>
     <input name="login">
     <input name="password" type="password">
     <input type="submit">
@@ -15,10 +15,11 @@ if (!empty($_SESSION['auth'])) {
     <head>
     </head>
     <body>
-    <p>logout</p>
+    <p>выйдите из акккауента</p>
     </body>
     </html>";
 } else {
     echo " <p>пожалуйста, авторизуйтесь</p>";
+    
 }
 ?>

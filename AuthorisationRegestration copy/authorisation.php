@@ -1,0 +1,28 @@
+<form action="" method="POST">
+    <h2>Авторизация</h2>
+    <input name="login">
+    <input name="password" type="password">
+    <input type="submit">
+</form>
+
+<?php
+$link = new mysqli("localhost", "root", "", "users_Fakhrutdinova");
+
+if (!empty($_POST['password']) and !empty($_POST['login'])) {
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+    $query = "SELECT * FROM User WHERE login='$login' AND password='$password'";
+    $result = mysqli_query($link, $query);
+    $user = mysqli_fetch_assoc($result);
+    if (!empty($user)) {
+        echo "прошел авторизацию";
+        $_SESSION["id"] = $user['id'];
+
+        // прошел авторизацию
+    } else {
+        echo "неверно ввел логин или пароль";
+        // неверно ввел логин или пароль
+    }
+}
+
+?>

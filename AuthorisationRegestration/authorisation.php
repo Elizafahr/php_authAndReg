@@ -11,7 +11,7 @@ $link = new mysqli("localhost", "root", "", "users_Fakhrutdinova");
 if (!empty($_POST['password']) and !empty($_POST['login'])) {
     $login = $_POST['login'];
     $password = $_POST['password'];
-    $query = "SELECT * FROM users WHERE login='$login' AND password='$password'";
+    $query = "SELECT * FROM User WHERE login='$login' AND password='$password'";
     $result = mysqli_query($link, $query);
     $user = mysqli_fetch_assoc($result);
     if (!empty($user)) {
